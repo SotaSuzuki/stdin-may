@@ -3,11 +3,11 @@
     <h1>{{message}}</h1>
     <FirstFuncButton
       name="first"
-      @click="log"
+      @click="goBack"
     >First</FirstFuncButton>
     <SecondFuncButton
       name="second"
-      @click="log"
+      @click="goBack"
     >Second</SecondFuncButton>
   </div>
 </template>
@@ -23,9 +23,19 @@ export default {
     }
   },
 
+  mounted () {
+    console.log('history', window.history)
+    console.log('route', this.$route)
+    console.log('router', this.$router)
+  },
+
   methods: {
-    log () {
-      console.log('logged!')
+    goBack () {
+      if (window.history.length > 1) {
+        this.$router.go(-1)
+      } else {
+        this.$router.push('/')
+      }
     }
   },
 

@@ -17,11 +17,13 @@
   color: #2c3e50;
 }
 #nav {
+  border: 5px solid rgba(#000, .4);
   padding: 30px;
   a {
-    font-weight: bold;
+    font-size: 1.3rem;
     color: #2c3e50;
     &.router-link-exact-active {
+      font-weight: bold;
       color: #42b983;
     }
   }

@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Home</h1>
+    <h2>Users</h2>
+    <ul class="user-links">
+      <li><router-link :to="{ name: 'user', params: { id: 'suzuki' } }">Suzuki</router-link></li>
+      <li><router-link :to="{ name: 'user', params: { id: 'sato' } }">Sato</router-link></li>
+    </ul>
   </div>
 </template>
 
@@ -16,3 +20,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.user-links {
+  padding-left: 0;
+  > li {
+    list-style-type: none;
+  }
+}
+</style>
