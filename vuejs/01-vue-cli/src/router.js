@@ -6,6 +6,7 @@ import User from './views/users/_id'
 import UserHome from './views/users/_id/home'
 import UserProfile from './views/users/_id/profile'
 import UserPhotos from './views/users/_id/photos'
+import UserTodo from './views/users/_id/todo'
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ const routes = [
         path: 'photos',
         name: 'user-photos',
         component: UserPhotos
+      },
+      {
+        path: 'todo',
+        name: 'user-todo',
+        component: UserTodo
       }
     ]
   }

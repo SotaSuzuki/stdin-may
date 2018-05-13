@@ -5,6 +5,8 @@
       <router-link :to="`/users/${id}/profile`">profile</router-link>
       |
       <router-link :to="`/users/${id}/photos`">photos</router-link>
+      |
+      <router-link :to="`/users/${id}/todo`">todo</router-link>
     </div>
     <router-view/>
   </div>
