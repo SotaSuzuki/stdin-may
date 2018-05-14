@@ -11,8 +11,10 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
+
+// NOTE その名前空間の mapState とかをバインドする
 // import { createNamespacedHelpers } from 'vuex'
-// const { mapState, mapGetters, mapActions } = createNamespacedHelpers('counter')
+// const { mapState, mapGetters, mapActions } = createNamespacedHelpers('modules/counter')
 
 // // NOTE 動的に module を追加可能
 // store.registerModule(moduleName)
@@ -49,7 +51,6 @@ export default {
       },
       countAlias: 'count',
       countPlusLocalState (state) {
-        console.log(this)
         return state.count + this.localCount
       },
       // NOTE アローファンクションを使うと this が Vue インスタンスではなくなってしまう

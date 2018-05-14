@@ -1,0 +1,1 @@
+export { firstPlugin } from './firstPlugin'

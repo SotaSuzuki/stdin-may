@@ -1,3 +1,5 @@
+const moduleName = 'counter'
+
 export const counter = {
   namespaced: true,
 
@@ -26,8 +28,8 @@ export const counter = {
       commit('increment')
     },
 
-    // mutation は同期的でなければならない
-    // action は非同期処理を盛り込める
+    // NOTE mutation は同期的でなければならない
+    // NOTE action は非同期処理を盛り込める
     async add ({ dispatch, commit, state, rootState }, { amount }) {
       // console.log('state', state)
       // console.log('rootState', rootState)
@@ -35,7 +37,7 @@ export const counter = {
         return new Promise(resolve => {
           setTimeout(() => {
             // commit('setCount', amount)
-            commit('counter/setCount', amount, { root: true })
+            commit(`${moduleName}/setCount`, amount, { root: true })
             dispatch('increment')
             resolve()
           }, 1000)
@@ -44,6 +46,7 @@ export const counter = {
       await addCount()
       return () => console.log('done')
     },
+    // NOTE ↑のを Promise で書いた
     // add ({ commit }, payload) {
     //   return new Promise(resolve => {
     //     setTimeout(() => {
