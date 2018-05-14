@@ -8,17 +8,17 @@ import FirstFuncButton from '../components/FirstFuncButton'
 const Welcome = Vue.component('Welcome', {
   template: `<div>Welcome! <button @click="goToButton">go to button</button></div>`,
   props: {
-    goToButton: [Function]
-  }
+    goToButton: [Function],
+  },
 })
 
 storiesOf('Welcome', module)
   .add('Welcome', () => ({
     render: h => h(Welcome, {
       props: {
-        goToButton: linkTo('FirstFuncButton')
-      }
-    })
+        goToButton: linkTo('FirstFuncButton'),
+      },
+    }),
   }))
 
 storiesOf('FirstFuncButton', module)
@@ -28,6 +28,6 @@ storiesOf('FirstFuncButton', module)
       <first-func-button name="bots" @click="act">First Button</first-func-button>
     `,
     methods: {
-      act: action('clicked')
-    }
+      act: action('clicked'),
+    },
   }))

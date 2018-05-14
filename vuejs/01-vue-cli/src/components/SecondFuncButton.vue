@@ -6,9 +6,9 @@ export default {
     return h('button', {
       attrs: props,
       on: {
-        click: listeners.click
-      }
+        click: listeners.click,
+      },
     }, children)
-  }
+  },
 }
 </script>

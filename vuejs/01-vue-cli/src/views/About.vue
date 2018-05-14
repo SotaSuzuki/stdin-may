@@ -19,7 +19,7 @@ import SecondFuncButton from '@/components/SecondFuncButton'
 export default {
   data () {
     return {
-      message: 'This is an about page'
+      message: 'This is an about page',
     }
   },
 
@@ -36,12 +36,12 @@ export default {
       } else {
         this.$router.push('/')
       }
-    }
+    },
   },
 
   components: {
     FirstFuncButton,
-    SecondFuncButton
-  }
+    SecondFuncButton,
+  },
 }
 </script>

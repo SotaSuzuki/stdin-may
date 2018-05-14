@@ -6,7 +6,7 @@ import User from './views/users/_id'
 import UserHome from './views/users/_id/home'
 import UserProfile from './views/users/_id/profile'
 import UserPhotos from './views/users/_id/photos'
-import UserTodo from './views/users/_id/todo'
+import UserCounter from './views/users/_id/counter'
 
 Vue.use(Router)
 
@@ -14,12 +14,12 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
   },
   {
     path: '/about',
     name: 'about',
-    component: About
+    component: About,
   },
   {
     path: '/users/:id',
@@ -29,27 +29,27 @@ const routes = [
       {
         path: '',
         name: 'user-home',
-        component: UserHome
+        component: UserHome,
       },
       {
         path: 'profile',
         name: 'user-profile',
-        component: UserProfile
+        component: UserProfile,
       },
       {
         path: 'photos',
         name: 'user-photos',
-        component: UserPhotos
+        component: UserPhotos,
       },
       {
-        path: 'todo',
-        name: 'user-todo',
-        component: UserTodo
-      }
-    ]
-  }
+        path: 'counter',
+        name: 'user-counter',
+        component: UserCounter,
+      },
+    ],
+  },
 ]
 
 export default new Router({
-  routes
+  routes,
 })

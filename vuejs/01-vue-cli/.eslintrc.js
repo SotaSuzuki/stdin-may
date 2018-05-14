@@ -3,5 +3,8 @@ module.exports = {
   'extends': [
     'plugin:vue/essential',
     '@vue/standard'
-  ]
+  ],
+  rules: {
+    'comma-dangle': ['error', 'always-multiline']
+  }
 }

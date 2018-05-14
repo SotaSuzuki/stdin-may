@@ -6,7 +6,7 @@
       |
       <router-link :to="`/users/${id}/photos`">photos</router-link>
       |
-      <router-link :to="`/users/${id}/todo`">todo</router-link>
+      <router-link :to="`/users/${id}/counter`">counter</router-link>
     </div>
     <router-view/>
   </div>
@@ -17,7 +17,7 @@ export default {
   computed: {
     id () {
       return this.$route.params.id
-    }
+    },
   },
 
   // 同じコンポーネント内でのパラメータの変更を検知
@@ -39,7 +39,7 @@ export default {
     '$route' (to, from) {
       console.log('from', from)
       console.log('to', to)
-    }
-  }
+    },
+  },
 }
 </script>
