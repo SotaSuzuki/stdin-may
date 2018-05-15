@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
 import About from './views/About'
+import Contact from './views/Contact'
 import User from './views/users/_id'
 import UserHome from './views/users/_id/home'
 import UserProfile from './views/users/_id/profile'
@@ -20,6 +21,11 @@ const routes = [
     path: '/about',
     name: 'about',
     component: About,
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
   },
   {
     path: '/users/:id',

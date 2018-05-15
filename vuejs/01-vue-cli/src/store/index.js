@@ -4,7 +4,10 @@ import { state } from './state'
 import { mutations } from './mutations'
 import { actions } from './actions'
 import { getters } from './getters'
-import { counter } from './modules'
+import {
+  counter,
+  contactForm,
+} from './modules'
 import { firstPlugin } from './plugins'
 
 Vue.use(Vuex)
@@ -22,6 +25,7 @@ export default new Vuex.Store({
 
   modules: {
     counter,
+    contactForm,
   },
 
   // NOTE plugin は mutation へのフック
