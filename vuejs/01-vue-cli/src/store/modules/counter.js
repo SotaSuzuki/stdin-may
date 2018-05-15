@@ -18,7 +18,7 @@ export const counter = {
       state.count++
     },
 
-    setCount (state, amount) {
+    addCount (state, amount) {
       state.count += amount
     },
   },
@@ -36,8 +36,8 @@ export const counter = {
       const addCount = () => {
         return new Promise(resolve => {
           setTimeout(() => {
-            // commit('setCount', amount)
-            commit(`${moduleName}/setCount`, amount, { root: true })
+            // commit('addCount', amount)
+            commit(`${moduleName}/addCount`, amount, { root: true })
             dispatch('increment')
             resolve()
           }, 1000)
@@ -50,7 +50,7 @@ export const counter = {
     // add ({ commit }, payload) {
     //   return new Promise(resolve => {
     //     setTimeout(() => {
-    //       commit('setCount', payload.amount)
+    //       commit('addCount', payload.amount)
     //       resolve(() => console.log('done'))
     //     }, 1000)
     //   })
