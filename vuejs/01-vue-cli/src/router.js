@@ -8,6 +8,7 @@ import UserHome from './views/users/_id/home'
 import UserProfile from './views/users/_id/profile'
 import UserPhotos from './views/users/_id/photos'
 import UserCounter from './views/users/_id/counter'
+import Playground from './views/playground'
 
 Vue.use(Router)
 
@@ -26,6 +27,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact,
+  },
+  {
+    path: '/playground',
+    name: 'playground',
+    component: Playground,
   },
   {
     path: '/users/:id',
