@@ -31,10 +31,23 @@
 </template>
 
 <script>
+import { helloMixin } from '@/mixins/hello'
+
 export default {
   name: 'HelloWorld',
+  mixins: [helloMixin],
+
+  // NOTE mixin のオプションと mixion 呼び出し元のオプションは
+  // シャローマージされコンフリクトした場合はコンポーネントの方を優先する
   props: {
-    msg: String,
+    msg2: String,
+  },
+
+  // NOTE helloMixin でも created フックを使用しているが
+  // これらはマージされる。先に mixin の created フックが呼ばれ
+  // そのあとに mixin 呼び出し元の created フックが呼ばれる
+  created () {
+    console.log('Hello world! from HelloWorld component.')
   },
 }
 </script>

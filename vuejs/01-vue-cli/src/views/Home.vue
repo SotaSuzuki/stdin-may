@@ -6,6 +6,10 @@
       <li><router-link :to="{ name: 'user', params: { id: 'suzuki' } }">Suzuki</router-link></li>
       <li><router-link :to="{ name: 'user', params: { id: 'sato' } }">Sato</router-link></li>
     </ul>
+
+    <hr>
+
+    <hello-world/>
   </div>
 </template>
 
