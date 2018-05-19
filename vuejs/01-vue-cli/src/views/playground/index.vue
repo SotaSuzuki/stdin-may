@@ -22,13 +22,26 @@
 
     <div>
       <h2>Tab</h2>
-      <ul>
-        <li><button @click="changeTab(1)">tab 1</button></li>
-        <li><button @click="changeTab(2)">tab 2</button></li>
-        <li><button @click="changeTab(3)">tab 3</button></li>
+      <ul class="tabmenu">
+        <li
+          v-for="tab in tabs"
+          :key="tab.id"
+          class="tabmenu-item"
+          :class="{
+            'tabmenu-item--active': currentTabId === tab.id
+          }"
+          @click="changeTab(tab.id)"
+        >
+          <button>Tab {{tab.id}}</button>
+        </li>
       </ul>
 
-      <div>{{tabContent}}</div>
+      <!-- NOTE 仮にこの tab-content がコンポーネントだった場合 -->
+      <!-- <keep-alive> タグで囲むことでタブ切替の際にコンポーネントのインスタンスをキャッシュしてくれる -->
+      <div class="tab-content">
+        <p>TabId: {{currentTabContent.id}}</p>
+        <p>{{currentTabContent.text}}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -47,13 +60,29 @@ export default {
     return {
       name: 'Hogeta',
       age: 20,
-      currentTab: 1,
+      // NOTE 基本的なタブの実装はこんな感じでは？
+      tabs: [
+        {
+          id: 1,
+          text: 'hogehogehoge',
+        },
+        {
+          id: 2,
+          text: 'fugafugafuag',
+        },
+        {
+          id: 3,
+          text: 'bazbazbazbaz',
+        },
+      ],
+      currentTabId: 1,
     }
   },
 
   computed: {
-    tabContent () {
-      return 'content 1'
+    currentTabContent () {
+      const index = this.tabs.findIndex((tab) => tab.id === this.currentTabId)
+      return this.tabs[index]
     },
   },
 
@@ -63,9 +92,34 @@ export default {
     },
 
     changeTab (id) {
-      console.log(id)
-      this.currentTab = id
+      this.currentTabId = id
     },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.tabmenu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.tabmenu-item {
+  border: 1px solid #000;
+  > button {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 6px;
+  }
+
+  &--active {
+    border-color: #00f;
+    border-width: 3px;
+  }
+}
+</style>
