@@ -63,7 +63,7 @@ h1 {
   font-size: 50px;
   font-family: monospace;
   letter-spacing: .2em;
-  animation: rotateTitle ease 5s infinite;
+  // animation: rotateTitle ease 5s infinite;
 }
 
 .user-links {

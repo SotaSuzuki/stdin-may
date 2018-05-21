@@ -9,12 +9,17 @@
       name="second"
       @click="goBack"
     >Second</SecondFuncButton>
+    <ThirdFuncButton
+      name="third"
+      @click="goBack"
+    >Third</ThirdFuncButton>
   </div>
 </template>
 
 <script>
 import FirstFuncButton from '@/components/FirstFuncButton'
 import SecondFuncButton from '@/components/SecondFuncButton'
+import ThirdFuncButton from '@/components/ThirdFuncButton'
 
 export default {
   data () {
@@ -42,6 +47,7 @@ export default {
   components: {
     FirstFuncButton,
     SecondFuncButton,
+    ThirdFuncButton,
   },
 }
 </script>
