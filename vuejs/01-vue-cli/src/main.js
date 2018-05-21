@@ -5,10 +5,17 @@ import store from './store'
 import {
   reverse,
 } from './customFilters'
+import {
+  Hoge,
+} from './plugins/Hoge'
 
 Vue.config.productionTip = false
 
 Vue.filter('reverse', reverse)
+
+Vue.use(Hoge, {
+  nightMode: false,
+})
 
 new Vue({
   router,

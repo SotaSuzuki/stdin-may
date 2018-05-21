@@ -20,20 +20,23 @@ export default {
     },
   },
 
-  // 同じコンポーネント内でのパラメータの変更を検知
+  created () {
+    this.$sayHello(this.id)
+  },
+
+  // NOTE 同じコンポーネント内でのパラメータの変更を検知
   // beforeRouteUpdate (to, from, next) {
   //   console.log('from', from)
   //   console.log('to', to)
   //   next()
   // },
 
-  // 同一コンポーネントないのパラメータ変更では
-  // ライフサイクルメソッドはコールされない
+  // NOTE 同一コンポーネント内のパラメータ変更ではライフサイクルメソッドはコールされない
   mounted () {
     console.log('route.params', this.$route.params)
   },
 
-  // beforeRouteUpdate() でやっていることと同じ
+  // NOTE beforeRouteUpdate() でやっていることと同じ
   // $route を watch してもOK
   watch: {
     '$route' (to, from) {
